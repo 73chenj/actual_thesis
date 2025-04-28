@@ -2,7 +2,6 @@
 LiAISON UKF with one estimate
 '''
 import numpy as np
-from pymatreader import read_mat
 from scipy.integrate import solve_ivp
 import spiceypy as sp
 import matplotlib.pyplot as plt
@@ -11,7 +10,7 @@ import time
 
 NRHO_init = [1.03545,0,-0.19003,0,-0.13071,5.62991e-07]
 ELFO_init = [0.9822609090260146, 0.0033780550309573357, -0.009090163078043704, 0.8948704814799997, 0.17693000307000004, -0.15601097269]
-start_time = time.time()
+
 '''
 Functions
 '''
@@ -126,6 +125,7 @@ covariances = []
 spread_history = []
 
 # Run UKF over multiple time steps
+start_time = time.time()
 for i in range(len(ground_truth_ELFO) - 1):
     covariances.append(np.diag(P))
     # Generate sigma points and weights
