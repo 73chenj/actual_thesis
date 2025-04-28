@@ -24,7 +24,7 @@ t = 2*np.pi/2358720
 # Using the same starting states of NRHO and Clementine but transformed into CR3BP coordinates
 NRHO_init = [1.03545,0,-0.19003,0,-0.13071,5.62991e-07]
 ELFO_init = [0.9822609090260146, 0.0033780550309573357, -0.009090163078043704, 0.8948704814799997, 0.17693000307000004, -0.15601097269]
-start_time = time.time()
+
 def cr3bp_state_transition(t, x):
     mu = 0.012150585609624  # Mass ratio between Earth and Moon
     # Unpack the state vector
@@ -159,6 +159,7 @@ bad_measurements = []
 all_a_posterioris = []
 residuals = []
 covariances = []
+start_time = time.time()
 for i in range(len(ground_truth_NRHO) - 1):
     covariances.append(np.diag(P))
     all_a_posterioris.append(prev_state_ELFO_EKF)
