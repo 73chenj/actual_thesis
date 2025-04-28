@@ -5,7 +5,7 @@ CR3BP model as ground truth
 The unit of distance is normalised such that the distance between earth and moon is 1
 Frame of reference is rotational centred at the barycentre of earth and moon
 The unit of time is normalised such that the orbital period of the moon around the Earth is 2pi
-To convert velocity from km/s to this frame you multiply it by 1.001633
+To convert velocity from km/s to this frame you multiply it by 0.977
 
 state vector is [x1, y1, z1, vx1, vy1, vz1]
 
